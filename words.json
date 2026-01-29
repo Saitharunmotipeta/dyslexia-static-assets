@@ -1,0 +1,154 @@
+{
+  "1": {
+    "id": 1,
+    "text": "cat",
+    "phonetics": "kat",
+    "syllables": ["cat"],
+    "difficulty": "easy",
+    "level_id": 1,
+    "image_url": "/images/words/cat.png",
+    "tts_available": true
+  },
+  "2": {
+    "id": 2,
+    "text": "dog",
+    "phonetics": "dog",
+    "syllables": ["dog"],
+    "difficulty": "easy",
+    "level_id": 1,
+    "image_url": "/images/words/dog.png",
+    "tts_available": true
+  },
+  "3": {
+    "id": 3,
+    "text": "sun",
+    "phonetics": "sun",
+    "syllables": ["sun"],
+    "difficulty": "easy",
+    "level_id": 1,
+    "image_url": "/images/words/sun.png",
+    "tts_available": true
+  },
+  "4": {
+    "id": 4,
+    "text": "book",
+    "phonetics": "buk",
+    "syllables": ["book"],
+    "difficulty": "easy",
+    "level_id": 1,
+    "image_url": "/images/words/book.png",
+    "tts_available": true
+  },
+  "5": {
+    "id": 5,
+    "text": "tree",
+    "phonetics": "tree",
+    "syllables": ["tree"],
+    "difficulty": "easy",
+    "level_id": 1,
+    "image_url": "/images/words/tree.png",
+    "tts_available": true
+  },
+
+  "6": {
+    "id": 6,
+    "text": "planet",
+    "phonetics": "planet",
+    "syllables": ["pla", "net"],
+    "difficulty": "medium",
+    "level_id": 2,
+    "image_url": "/images/words/planet.png",
+    "tts_available": true
+  },
+  "7": {
+    "id": 7,
+    "text": "river",
+    "phonetics": "river",
+    "syllables": ["ri", "ver"],
+    "difficulty": "medium",
+    "level_id": 2,
+    "image_url": "/images/words/river.png",
+    "tts_available": true
+  },
+  "8": {
+    "id": 8,
+    "text": "pencil",
+    "phonetics": "pencil",
+    "syllables": ["pen", "cil"],
+    "difficulty": "medium",
+    "level_id": 2,
+    "image_url": "/images/words/pencil.png",
+    "tts_available": true
+  },
+  "9": {
+    "id": 9,
+    "text": "mountain",
+    "phonetics": "mountain",
+    "syllables": ["moun", "tain"],
+    "difficulty": "medium",
+    "level_id": 2,
+    "image_url": "/images/words/mountain.png",
+    "tts_available": true
+  },
+  "10": {
+    "id": 10,
+    "text": "window",
+    "phonetics": "window",
+    "syllables": ["win", "dow"],
+    "difficulty": "medium",
+    "level_id": 2,
+    "image_url": "/images/words/window.png",
+    "tts_available": true
+  },
+
+  "11": {
+    "id": 11,
+    "text": "education",
+    "phonetics": "education",
+    "syllables": ["ed", "u", "ca", "tion"],
+    "difficulty": "hard",
+    "level_id": 3,
+    "image_url": "/images/words/education.png",
+    "tts_available": true
+  },
+  "12": {
+    "id": 12,
+    "text": "responsibility",
+    "phonetics": "responsibility",
+    "syllables": ["re", "spon", "si", "bi", "li", "ty"],
+    "difficulty": "hard",
+    "level_id": 3,
+    "image_url": "/images/words/responsibility.png",
+    "tts_available": true
+  },
+  "13": {
+    "id": 13,
+    "text": "architecture",
+    "phonetics": "architecture",
+    "syllables": ["ar", "chi", "tec", "ture"],
+    "difficulty": "hard",
+    "level_id": 3,
+    "image_url": "/images/words/architecture.png",
+    "tts_available": true
+  },
+  "14": {
+    "id": 14,
+    "text": "imagination",
+    "phonetics": "imagination",
+    "syllables": ["i", "ma", "gi", "na", "tion"],
+    "difficulty": "hard",
+    "level_id": 3,
+    "image_url": "/images/words/imagination.png",
+    "tts_available": true
+  },
+  "15": {
+    "id": 15,
+    "text": "communication",
+    "phonetics": "communication",
+    "syllables": ["com", "mu", "ni", "ca", "tion"],
+    "difficulty": "hard",
+    "level_id": 3,
+    "image_url": "/images/words/communication.png",
+    "tts_available": true
+  }
+}
