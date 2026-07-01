@@ -1,0 +1,242 @@
+Tables:
+
+1. facilities
+
+* facility_id (PK)
+* facility_name
+* facility_location
+* created_at
+* is_active
+
+2. departments
+
+* department_id (PK)
+* facility_id (FK)
+* department_name
+* created_at
+* is_active
+
+3. patients
+
+* patient_id (PK)
+* patient_name
+* provider_name
+* policy_number
+* aadhaar_number
+* pan_number
+* phone_number
+* dob
+* gender
+* created_at
+* is_active
+
+4. encounters
+
+* encounter_id (PK)
+
+* patient_id (FK)
+
+* facility_id (FK)
+
+* department_id (FK)
+
+* condition_type
+
+* verification_status
+
+* request_status
+
+* aadhaar_verified
+
+* pan_verified
+
+* prescription_verified
+
+* scan_verified
+
+* doctor_notes_verified
+
+* insurance_card_verified
+
+* remarks
+
+* status_updated_at
+
+* created_at
+
+* updated_at
+
+* is_active
+
+5. authorization_requests
+
+* auth_request_id (PK)
+
+* encounter_id (FK)
+
+* estimated_total_amount
+
+* approval_amount
+
+* provider_response
+
+* approval_expiry_date
+
+* submitted_at
+
+* reviewed_at
+
+* created_at
+
+* updated_at
+
+* is_active
+
+6. authorization_procedures
+
+* procedure_id (PK)
+
+* auth_request_id (FK)
+
+* procedure_code
+
+* procedure_name
+
+* expected_amount
+
+* created_at
+
+* updated_at
+
+* is_active
+
+7. encounter_history
+
+* history_id (PK)
+
+* encounter_id (FK)
+
+* old_status
+
+* new_status
+
+* updated_by
+
+* remarks
+
+* event_type
+
+* created_at
+
+8. analytics_cache (Optional)
+
+* analytics_id (PK)
+
+* total_requests
+
+* total_approved
+
+* total_denied
+
+* total_pending
+
+* avg_turnaround_time
+
+* generated_at
+
+
+
+Relation ships between them :
+
+1. facilities → departments
+   Relationship: One-to-Many
+   Description: One facility can contain multiple departments.
+   Foreign Key:
+   departments.facility_id → facilities.facility_id
+
+2. patients → encounters
+   Relationship: One-to-Many
+   Description: One patient can have multiple encounters/insurance requests over time.
+   Foreign Key:
+   encounters.patient_id → patients.patient_id
+
+3. facilities → encounters
+   Relationship: One-to-Many
+   Description: One facility can handle multiple encounters.
+   Foreign Key:
+   encounters.facility_id → facilities.facility_id
+
+4. departments → encounters
+   Relationship: One-to-Many
+   Description: One department can manage multiple encounters.
+   Foreign Key:
+   encounters.department_id → departments.department_id
+
+5. encounters → authorization_requests
+   Relationship: One-to-One
+   Description: Each encounter contains one authorization request.
+   Foreign Key:
+   authorization_requests.encounter_id → encounters.encounter_id
+
+6. authorization_requests → authorization_procedures
+   Relationship: One-to-Many
+   Description: One authorization request can contain multiple procedures.
+   Foreign Key:
+   authorization_procedures.auth_request_id → authorization_requests.auth_request_id
+
+7. encounters → encounter_history
+   Relationship: One-to-Many
+   Description: One encounter can have multiple status/activity history records.
+   Foreign Key:
+   encounter_history.encounter_id → encounters.encounter_id
+
+
+Api endpoints;
+
+1. GET /facilities
+   Purpose:
+   Fetch all available healthcare facilities for selection in the application.
+
+2. GET /departments
+   Purpose:
+   Fetch all departments available under facilities.
+
+3. GET /patients/{id}
+   Purpose:
+   Fetch patient details along with provider information and policy details.
+
+4. POST /encounters
+   Purpose:
+   Create a new encounter for an insurance authorization request along with document verification details, condition type, and initial request status.
+
+5. GET /encounters
+   Purpose:
+   Fetch all encounters for dashboard display and filtering based on request status or condition type.
+
+6. GET /encounters/{id}
+   Purpose:
+   Fetch complete details of a specific encounter including patient details, verification details, and request status.
+
+7. PATCH /encounters/{id}/status
+   Purpose:
+   Update encounter request status such as Approved, Denied, Pending, or Request More Information. This endpoint also creates an entry in encounter history.
+
+8. POST /authorization-requests
+   Purpose:
+   Create and store authorization request details such as estimated amount, provider response, approval amount, and approval expiry information.
+
+9. GET /authorization-requests/{id}
+   Purpose:
+   Fetch authorization request details for a specific encounter.
+
+10. POST /authorization-procedures
+    Purpose:
+    Add procedure codes, procedure names, and expected amounts for an authorization request.
+
+11. GET /encounter-history/{encounterId}
+    Purpose:
+    Fetch complete activity and status history of an encounter including status changes, timestamps, remarks, and updated user information.
+
+12. GET /analytics/dashboard
+    Purpose:
+    Fetch analytics metrics such as total requests, approvals, denials, pending requests, delayed requests, and average turnaround time for dashboard visualization.
